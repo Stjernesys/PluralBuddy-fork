@@ -36,6 +36,7 @@
 		"@slipher/opentelemetry": "https://pkg.pr.new/tiramisulabs/extra/@slipher/opentelemetry@d8fd3b7",
 		"@slipher/redis-adapter": "^0.0.6",
 		"@types/lodash": "^4.17.25",
+		"@udohjeremiah/zod-mongo-schema": "^2.0.1",
 		"bson": "7.2.0",
 		"colorthief": "^3.3.1",
 		"file-type": "^21.3.0",
@@ -51,7 +52,8 @@
 		"svix": "^1.92.2",
 		"winston": "^3.19.0",
 		"yunaforseyfert": "^1.1.3",
-		"zod": "^4.3.6"
+		"zod": "^4.3.6",
+		"zod-to-mongodb-schema": "^0.0.1"
 	},
 	"scripts": {
 		"bot": "bun run src",

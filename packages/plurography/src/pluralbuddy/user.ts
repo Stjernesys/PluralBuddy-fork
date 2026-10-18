@@ -3,14 +3,14 @@
 import z from "zod";
 import { assetStringGeneration } from "./operation";
 import { PSystemObject } from "./system";
-import { PTerminology } from "./terminology";
+import { PTerminology, terminologyDefaults } from "./terminology";
 
 export const PUserObject = z.object({
 	userId: z.string(),
 
 	userLang: z.string().optional().default("en"),
 	system: PSystemObject.optional(),
-	storagePrefix: z.string(),
+	storagePrefix: z.string().default(assetStringGeneration(8)),
 	blocked: z.boolean().default(false),
 	policyStatus: z.number().default(0).optional(),
 	nudging: z
@@ -26,7 +26,7 @@ export const PUserObject = z.object({
 			dmReply: false,
 			serverReplying: false,
 		}),
-	terminology: PTerminology,
+	terminology: PTerminology.default(terminologyDefaults),
 	syncConfiguration: z
 		.record(
 			z.string(),
@@ -53,6 +53,7 @@ export const defaultUserStructure = (userId: string) => {
 		blocked: false,
 		userLang: "en",
 		storagePrefix: assetStringGeneration(8),
+		terminology: terminologyDefaults,
 		nudging: {
 			blockedUsers: [],
 			currentlyEnabled: true,

@@ -3,6 +3,7 @@
 import {
 	defaultNudgingStructure,
 	defaultUserStructure,
+	PUserObject,
 	type PUser,
 } from "plurography";
 import { userCollection } from "../mongodb";
@@ -20,7 +21,7 @@ export async function getUserById(id: string): Promise<PUser> {
 }
 
 export async function writeUserById(id: string, userObj: PUser) {
-	return await userCollection.findOneAndReplace({ userId: id }, userObj, {
+	return await userCollection.findOneAndReplace({ userId: id }, PUserObject.parse(userObj), {
 		upsert: true,
 	});
 }

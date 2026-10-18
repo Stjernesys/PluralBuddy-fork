@@ -21,6 +21,7 @@ import { AlertView } from "@/views/alert";
 import { LoadingView } from "@/views/loading";
 import { PluralBuddyIntro } from "@/views/pluralbuddy-intro";
 import { createdSystems } from "../create-new-system";
+import { terminologyDefaults } from "plurography";
 
 export default class NameCNS extends ComponentCommand {
 	componentType = "Button" as const;
@@ -54,7 +55,7 @@ export default class NameCNS extends ComponentCommand {
 			userId: ctx.author.id,
 			blocked: false,
 			storagePrefix: user.storagePrefix,
-			terminology: terminology,
+			terminology: terminology ?? terminologyDefaults,
 			// @ts-expect-error
 			system: {
 				associatedUserId: ctx.author.id,
