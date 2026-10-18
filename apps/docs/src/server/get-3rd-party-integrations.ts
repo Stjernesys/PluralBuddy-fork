@@ -17,16 +17,20 @@ export type DocsThirdPartyIntegration = {
 	author?: string;
 };
 
-const fetchIntegrations = unstable_cache(async () => {
-	const mongo = await clientPromise;
-	const db = mongo.db(`${process.env.ENV}-pluralbuddy-app`);
-	const integrations = await db
-		.collection<DocsThirdPartyIntegration>("integrations")
-		.find()
-		.toArray();
+const fetchIntegrations = unstable_cache(
+	async () => {
+		const mongo = await clientPromise;
+		const db = mongo.db(`${process.env.ENV}-pluralbuddy-app`);
+		const integrations = await db
+			.collection<DocsThirdPartyIntegration>("integrations")
+			.find()
+			.toArray();
 
-	return integrations;
-}, ["integrations"], { revalidate: 1, tags: ["integrations"] });
+		return integrations;
+	},
+	["integrations"],
+	{ revalidate: 86400, tags: ["integrations"] },
+);
 
 export async function get3rdPartyIntegrations() {
     return await fetchIntegrations();
