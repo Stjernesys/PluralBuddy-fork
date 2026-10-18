@@ -23,7 +23,7 @@ export default class AcceptPolicy extends ModalCommand {
 				}),
 			},
 			{ upsert: true },
-		).catch(v => console.log(JSON.stringify(v, undefined, 2)));
+		)
 		const newCustomId = InteractionIdentifier.PolicyForm.substring(
 			ctx.customId ?? "",
 		).join("-");
