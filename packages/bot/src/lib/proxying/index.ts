@@ -407,8 +407,12 @@ export const getModernComponentsMappings = (
 ): ApplicableWebhookWritePayload["body"] => {
 	if (
 		components.length === 2 &&
-		components[1]?.data.type === ComponentType.MediaGallery
+		components[1]?.data.type === ComponentType.TextDisplay &&
+		components[1]?.data.content?.startsWith("https://klipy.com/gifs")
 	) {
+		return {
+			content: `${(components[0] as TextDisplay)?.data.content}\n${(components[1] as TextDisplay)?.data.content}`,
+		};
 	}
 
 	const isSticker = (i: number) =>
