@@ -161,14 +161,14 @@ export async function proxy(
 			level: "info",
 		});
 
-		const isNativelyMentioning =
-			message.referencedMessage &&
-			message.referencedMessage?.webhookId !== undefined
+		const isNativelyMentioning = message.referencedMessage
+			? message.referencedMessage?.webhookId !== undefined
 				? true
 				: message.referencedMessage &&
 					message.mentions.users
 						.map((v) => v.id)
-						.includes(message.referencedMessage.author.id);
+						.includes(message.referencedMessage.author.id)
+			: true;
 		const pingMode = guild.pingMode ?? "unaffected";
 		const isToMention =
 			pingMode === "unaffected"
