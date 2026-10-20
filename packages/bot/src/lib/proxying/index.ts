@@ -405,6 +405,13 @@ export const getModernComponentsMappings = (
 		name: string;
 	}[] = [],
 ): ApplicableWebhookWritePayload["body"] => {
+	if (components[0]?.data.type === ComponentType.Container) return {
+		components,
+		flags:
+			components.length !== 0
+				? MessageFlags.IsComponentsV2
+				: (0 as MessageFlags),
+	};
 	if (
 		components.length === 2 &&
 		components[1]?.data.type === ComponentType.TextDisplay &&
