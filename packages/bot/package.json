@@ -34,7 +34,7 @@
 		"@sapphire/snowflake": "^3.5.5",
 		"@sentry/bun": "^11.0.0",
 		"@slipher/opentelemetry": "https://pkg.pr.new/tiramisulabs/extra/@slipher/opentelemetry@d8fd3b7",
-		"@slipher/redis-adapter": "^0.0.6",
+		"@slipher/redis-adapter": "latest",
 		"@types/lodash": "^4.17.25",
 		"@udohjeremiah/zod-mongo-schema": "^2.0.1",
 		"bson": "7.2.0",
