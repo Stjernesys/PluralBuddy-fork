@@ -14,6 +14,8 @@ export async function processFileAttachments(
 	fileAttachments: Array<{ buff: Buffer; spoilered: boolean; name: string }>;
 	hasTextContent: boolean;
 }> {
+	if (!message.member) return { fileAttachments: [], hasTextContent: false };
+
 	const fileAttachments: Array<{
 		buff: Buffer;
 		spoilered: boolean;
@@ -21,10 +23,7 @@ export async function processFileAttachments(
 	}> = [];
 	const userPerms = await client.channels.memberPermissions(
 		message.channelId,
-		await client.members.fetch(
-			realGuildId ?? (message.guildId as string),
-			sendingUserId ?? message.user.id,
-		),
+		message.member,
 		true,
 	);
 
