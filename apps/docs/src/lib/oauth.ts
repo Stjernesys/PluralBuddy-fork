@@ -1,9 +1,9 @@
 /**  * PluralBuddy Discord Bot  *  - is licensed under MIT License.  */
 
+import { verifyAccessToken } from "better-auth/oauth2";
 import { MongoClient, ObjectId } from "mongodb";
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "./auth";
-import { verifyAccessToken } from "better-auth/oauth2";
 
 export async function authenticateOAuth(
 	request: NextRequest,
@@ -58,6 +58,8 @@ export async function authenticateOAuth(
 					{ status: 401 },
 				),
 			};
+
+		console.warn("error while oauth authenticating:", e)
 		return {
 			response: NextResponse.json(
 				{ errors: [{ type: "invalid-auth", friendly: "invalid auth token." }] },
