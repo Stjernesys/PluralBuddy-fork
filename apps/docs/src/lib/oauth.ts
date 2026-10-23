@@ -47,7 +47,7 @@ export async function authenticateOAuth(
 			issuer: `${process.env.BETTER_AUTH_URL}/api/auth`,
 			audience: process.env.BETTER_AUTH_URL ?? "",
 		},
-		jwksUrl: `${origin}/api/auth/jwks`,
+		jwksUrl: `${process.env.BETTER_AUTH_URL}/api/auth/jwks`,
 	}).catch((e) => {
 		if (e?.body?.code === "INVALID_SCOPE_SYSTEMREAD")
 			return {
