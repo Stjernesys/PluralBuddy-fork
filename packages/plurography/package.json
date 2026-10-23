@@ -3,7 +3,7 @@
   "module": "src/index.ts",
   "version": "0.6.0",
   "type": "module",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {

@@ -1,10 +1,10 @@
-/**  * PluralBuddy Discord Bot  *  - is licensed under MIT License.  */
+/**  * PluralBuddy Discord Bot  *  - is licensed under Apache License 2.0.  */
 
 import {
-	type Redacted,
-	type PAlter,
 	AlterProtectionFlags,
+	type PAlter,
 	type PTag,
+	type Redacted,
 	TagProtectionFlags,
 } from "plurography";
 import { has } from "./privacy-bitmask";

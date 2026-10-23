@@ -1,4 +1,4 @@
-/**  * PluralBuddy Discord Bot  *  - is licensed under MIT License.  */
+/**  * PluralBuddy Discord Bot  *  - is licensed under Apache License 2.0.  */
 
 import { verifyAccessToken } from "better-auth/oauth2";
 import { MongoClient, ObjectId } from "mongodb";

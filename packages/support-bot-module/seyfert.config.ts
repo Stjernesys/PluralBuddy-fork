@@ -1,4 +1,4 @@
-/**  * PluralBuddy Discord Bot  *  - is licensed under MIT License.  */import { config } from "seyfert";
+/**  * PluralBuddy Discord Bot  *  - is licensed under Apache License 2.0.  */import { config } from "seyfert";
  
 export default config.bot({
     token: process.env.BOT_TOKEN ?? "",
