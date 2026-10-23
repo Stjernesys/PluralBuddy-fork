@@ -8,7 +8,6 @@ import { auth } from "./auth";
 export async function authenticateOAuth(
 	request: NextRequest,
 	requiredScopes: string[],
-	origin: string | undefined = process.env.BETTER_AUTH_URL,
 	mongoClient?: MongoClient
 ): Promise<
 	| { response: NextResponse }
@@ -42,10 +41,11 @@ export async function authenticateOAuth(
 			),
 		};
 	}
+
 	const token = await verifyAccessToken(accessToken, {
 		verifyOptions: {
 			issuer: `${process.env.BETTER_AUTH_URL}/api/auth`,
-			audience: origin ?? ""
+			audience: process.env.BETTER_AUTH_URL ?? "",
 		},
 		jwksUrl: `${origin}/api/auth/jwks`,
 	}).catch((e) => {
@@ -59,7 +59,7 @@ export async function authenticateOAuth(
 				),
 			};
 
-		console.warn("error while oauth authenticating:", e)
+		console.warn("error while oauth authenticating:", e);
 		return {
 			response: NextResponse.json(
 				{ errors: [{ type: "invalid-auth", friendly: "invalid auth token." }] },
