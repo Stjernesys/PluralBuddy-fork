@@ -114,7 +114,6 @@ export async function authenticateOAuth(
 			),
 		};
 	}
-
 	const discordAccountId = await client
 		.db(`${process.env.ENV}-pluralbuddy-app`)
 		.collection("account")

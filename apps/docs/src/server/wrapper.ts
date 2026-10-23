@@ -107,7 +107,6 @@ export function createOAuthFunction<
 			const oauthResponse = await authenticateOAuth(
 				request,
 				options.scopes,
-				new URL(request.url).origin,
 				db,
 			);
 			const [botDb, webDb] = [
