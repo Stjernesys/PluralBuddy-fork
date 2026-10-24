@@ -327,7 +327,7 @@ const replaceTranslations = (
 				.replaceAll(`proxy ${terminology.tags}`, terminology.proxy_tag)
 				.replaceAll(
 					`Proxy ${terminology.tags_capital}s`,
-					terminology.proxy_tags_plural[0],
+					terminology.proxy_tags_capital,
 				)
 				.replaceAll(
 					`Proxy ${terminology.tags_capital}`,
