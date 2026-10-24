@@ -1,4 +1,4 @@
-/**  * PluralBuddy Discord Bot  *  - is licensed under MIT License.  */
+/**  * PluralBuddy Discord Bot  *  - is licensed under Apache License 2.0.  */
 
 import { cloneDeep } from "lodash";
 import {
@@ -325,6 +325,10 @@ const replaceTranslations = (
 					terminology.proxy_tags_plural,
 				)
 				.replaceAll(`proxy ${terminology.tags}`, terminology.proxy_tag)
+				.replaceAll(
+					`Proxy ${terminology.tags_capital}s`,
+					terminology.proxy_tags_plural[0],
+				)
 				.replaceAll(
 					`Proxy ${terminology.tags_capital}`,
 					terminology.proxy_tags_capital,

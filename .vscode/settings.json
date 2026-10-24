@@ -1,5 +1,5 @@
 {
-	"copyright-header-injector.copyrightText": "/**  * PluralBuddy Discord Bot  *  - is licensed under MIT License.  */",
+	"copyright-header-injector.copyrightText": "/**  * PluralBuddy Discord Bot  *  - is licensed under Apache License 2.0.  */",
 	"editor.formatOnPaste": true,
 
 	"editor.codeActionsOnSave": {

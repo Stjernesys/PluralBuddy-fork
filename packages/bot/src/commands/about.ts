@@ -1,4 +1,4 @@
-/**  * PluralBuddy Discord Bot  *  - is licensed under MIT License.  */
+/**  * PluralBuddy Discord Bot  *  - is licensed under Apache License 2.0.  */
 
 import { Command, type CommandContext, Container, Declare, LocalesT, type Message, TextDisplay } from "seyfert";
 import { MessageFlags } from "seyfert/lib/types";

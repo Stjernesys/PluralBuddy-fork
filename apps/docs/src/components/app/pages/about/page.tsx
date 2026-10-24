@@ -97,7 +97,7 @@ export function AboutPage() {
 										with a TON of TypeScript.
 									</CardTitle>
 									<CardDescription className="flex items-center gap-1 text-center w-full justify-center">
-										PluralBuddy is licensed under the MIT License.
+										PluralBuddy is licensed under the Apache 2.0 License.
 									</CardDescription>
 								</CardContent>
 							</Card>

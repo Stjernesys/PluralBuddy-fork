@@ -66,7 +66,7 @@ export async function MarketingHomeMoreSection() {
 							>
 								open source
 							</Link>{" "}
-							under the extremely permissive MIT license, and will never have
+							under the extremely permissive Apache v2.0 license, and will never have
 							subscriptions or use a commerical model. Plurality for all!
 						</p>
 

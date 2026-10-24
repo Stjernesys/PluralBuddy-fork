@@ -1,4 +1,4 @@
-/**  * PluralBuddy Discord Bot  *  - is licensed under MIT License.  */ import {
+/**  * PluralBuddy Discord Bot  *  - is licensed under Apache License 2.0.  */ import {
 	type Webhook,
 	type UsingClient,
 	type TopLevelBuilders,

@@ -1,4 +1,4 @@
-/**  * PluralBuddy Discord Bot  *  - is licensed under MIT License.  */
+/**  * PluralBuddy Discord Bot  *  - is licensed under Apache License 2.0.  */
 
 import type { Client, ParseClient, ParseGlobalMiddlewares, ParseLocales, SeyfertRegistry } from "seyfert";
 import type { Pi18nCache } from "./cache/i18n";
